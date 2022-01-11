@@ -15,6 +15,8 @@
 <?php
 include "../nav/nav.php"
 ?>
+
+
 <div class="container">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
