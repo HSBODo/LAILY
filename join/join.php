@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAILY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="https://shop-phinf.pstatic.net/20210901_50/1630475975899wacOO_JPEG/31611874611157425_258975115.jpg?type=m120" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../laily/css/styles.css" rel="stylesheet" />
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>회원가입</title>
+
+
+    <style>
+        a{color: black;}
+        h5{
+            margin: 2px;
+            margin-top: 5%;
+           text-align: left;
+        }
+        .gen{
+            margin: 2px;
+            margin-top: 5%;
+            text-align: center;
+        }
+
+    </style>
+
 </head>
 <body>
-<?php
-include "../nav/nav.php"
-?>
+
+    <?php
+    include "../laily/common/nav.php"
+    ?>
 
 
-<div class="container">
+    <?php
+    include "../laily/common/header.php"
+    ?>
+
+
+<div class="container" style="border: 2px solid;margin-top: 5%; padding: 3%; " align="center">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
-        <div class="jumbotron" style="padding-top: 20px;">
+        <h3 style="text-align: center">회원가입</h3>
+        <div class="jumbotron" style="padding-top: 20px; border: 1px solid; padding: 15px; ">
             <form name="join"  method="post" action="join_ok.php">
-                <h3 style="text-align: center">회원가입 화면</h3>
+
                 <div class="col-lg-4"></div>
+                <h5>ID</h5>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="아이디" name="id" id="id" maxlength="15">
                 </div>
                 <div class="form-group">
                     <span id="id_check_msg" data-check="0"></span>
                 </div>
+                <h5>비밀번호</h5>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="비밀번호" name="pass" id="pass" maxlength="20">
                 </div>
@@ -39,26 +71,32 @@ include "../nav/nav.php"
                 <div class="form-group">
                     <span id="pass_check_msg" data-check="0"></span>
                 </div>
+                <h5>이름</h5>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="이름" name="name" id="name" maxlength="20">
                 </div>
-                <div class="form-group" style="text-align: center">
+                <h5>전화번호</h5>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="전화번호" name="phone" id="phone" maxlength="20">
+                </div>
+                <div class="col-lg-4"></div>
+                <h5>이메일</h5>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="이메일" name="email" id="email" maxlength="80">
+                </div>
+                <h5 class="gen">성별</h5>
+                <div class="form-group">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-primary active">
-                            <input type="radio" name="gender" id="gender1" autocomplete="off" value="남자" checked>남자
+                            <input type="radio"   name="gender" id="gender1" autocomplete="off" value="남자" checked>남자
                         </label>
                         <label class="btn btn-primary">
                             <input type="radio" name="gender" id="gender2" autocomplete="off" value="여자">여자
                         </label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" placeholder="전화번호" name="phone" id="phone" maxlength="20">
-                </div>
-                <div class="col-lg-4"></div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="이메일" name="email" id="email" maxlength="80">
-                </div>
+                <hr>
+                <br>
 
                 <span class="btn btn-primary form-control" onclick="check_input()">회원가입</span>&nbsp;
                 <span class="btn btn-primary form-control" onclick="reset_form()">초기화</span>
@@ -67,6 +105,10 @@ include "../nav/nav.php"
         </div>
     </div>
 </div>
+<?php
+    include "../laily/common/footer.php";
+?>
+
 
 <script>
 

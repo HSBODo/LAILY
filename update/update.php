@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAILY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="https://shop-phinf.pstatic.net/20210901_50/1630475975899wacOO_JPEG/31611874611157425_258975115.jpg?type=m120" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../laily/css/styles.css" rel="stylesheet" />
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <title>글쓰기</title>
+    <link href="../reply/reply.css" rel="stylesheet"/>
 </head>
 <body>
 <?php
-include "../nav/nav.php"
+include "../laily/common/nav.php";
+include "../laily/common/header.php";
 ?>
 
 
@@ -29,13 +36,13 @@ $board = $sql->fetch_array();
 //print_r($board);
 ?>
 
-<div class="container" >
+<div class="container" style="margin-top: 5%">
     <div id="board_read">
         <form action="../update/update_ok.php"method="post">
         <input type="hidden" name="idx" value="<?=$bno ?>">
         <table class="table table-striped" style="text-align: center">
             <tr>
-                <th colspan="2" style="background-color:#eeeeee;text-align: center ">게시판 글수정</th>
+                <th colspan="2" style="background-color:#eeeeee;text-align: center "><?=$board['title']?></th>
             </tr>
             <tr>
                 <td>
@@ -62,6 +69,9 @@ $board = $sql->fetch_array();
 
 
 </div>
+<?php
+    include "../laily/common/footer.php";
+?>
 
 
 </body>

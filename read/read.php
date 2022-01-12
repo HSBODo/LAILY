@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAILY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="https://shop-phinf.pstatic.net/20210901_50/1630475975899wacOO_JPEG/31611874611157425_258975115.jpg?type=m120" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../laily/css/styles.css" rel="stylesheet" />
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../reply/reply.js"></script>
-    <link rel="stylesheet" href="../reply/reply.css">
-    <title>글쓰기</title>
+    <link href="../reply/reply.css" rel="stylesheet"/>
+
+
+
 </head>
 <body>
 <?php
-include "../nav/nav.php"
+include "../laily/common/nav.php";
+include "../laily/common/header.php"
 ?>
 
 <?php
@@ -34,11 +43,11 @@ mq(" update board set hit= '$hit' where idx ='$bno'
 //print_r($board);
 ?>
 
-<div class="container" >
+<div class="container"  style="margin-top: 3%">
     <div id="board_read">
         <table class="table table-striped" style="text-align: center">
             <tr>
-                <th colspan="2" style="background-color:#eeeeee;text-align: center ">게시판 글읽기</th>
+                <th colspan="2" style="background-color:#eeeeee;text-align: center "><?=$board['title']?></th>
             </tr>
             <tr>
                 <td>글 제목</td>
@@ -148,27 +157,30 @@ mq(" update board set hit= '$hit' where idx ='$bno'
 
 
 
-<!--   라이브리 시티 설치 코드 -->
-<!--    <div id="lv-container" data-id="city" data-uid="MTAyMC81NTE3My8zMTY0MA==">-->
-<!--        <script type="text/javascript">-->
-<!--            (function(d, s) {-->
-<!--                var j, e = d.getElementsByTagName(s)[0];-->
-<!---->
-<!--                if (typeof LivereTower === 'function') { return; }-->
-<!---->
-<!--                j = d.createElement(s);-->
-<!--                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';-->
-<!--                j.async = true;-->
-<!---->
-<!--                e.parentNode.insertBefore(j, e);-->
-<!--            })(document, 'script');-->
-<!--        </script>-->
-<!--        <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>-->
-<!--    </div>-->
-<!--    시티 설치 코드 끝 -->
+<!--   라이브리 시티 설치 코드
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NTE3My8zMTY0MA==">
+        <script type="text/javascript">
+            (function(d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+
+                if (typeof LivereTower === 'function') { return; }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
+    </div>
+ 시티 설치 코드 끝 -->
 </div>
+<?php
+    include "../laily/common/footer.php";
+?>
 
-
+<script src="../reply/reply.js"></script>
 
 </body>
 </html>

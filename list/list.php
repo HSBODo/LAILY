@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAILY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="https://shop-phinf.pstatic.net/20210901_50/1630475975899wacOO_JPEG/31611874611157425_258975115.jpg?type=m120" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../laily/css/styles.css" rel="stylesheet" />
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>게시판</title>
+
 </head>
 <body>
 <?php
-include "../nav/nav.php"
+include "../laily/common/nav.php";
+include "../laily/common/header.php";
+
+
 ?>
 
 
-<div class="container">
+<div class="container" style="margin-top: 3%">
     <div id="board_area">
-        <h1><b>자유게시판</b></h1><br>
-            <h4>자유롭게 글을 쓸 수 있는 게시판입니다.</h4><br>
+        <h1 align="center"><b>Q&A</b></h1><br>
+
                 <table class="table table-striped" style="text-align: center; border: 1px solid #ddddda">
                     <tr>
                         <?php
@@ -155,6 +165,8 @@ include "../nav/nav.php"
 
 
     </div>
+
+
     <script>
         //비밀글 클릭시 모달창
         $(function (){
@@ -247,12 +259,12 @@ include "../nav/nav.php"
 
     ?>
 
-       <button class="btn btn-primary pull-right" type="button" style="margin-left: 5px;" onclick="deleteReport()">삭제</button>
-            <a href="../write/write.php"><button class="btn btn-primary pull-right">글쓰기</button></a>
+       <button class="btn btn-primary pull-right" type="button" style="margin-left: 5px; float: right" onclick="deleteReport()">삭제</button>
+            <a href="../write/write.php" style="float: right;"><button class="btn btn-primary pull-right">글쓰기</button></a>
     <?php
     }elseif ($role=="ADMIN"||$role=="USER"){
     ?>
-        <a href="../write/write.php"><button class="btn btn-primary pull-right">글쓰기</button></a>
+        <a href="../write/write.php" style="float: right;"><button class="btn btn-primary pull-right">글쓰기</button></a>
     <?php
         }
     ?>
@@ -271,6 +283,9 @@ include "../nav/nav.php"
 
 </div>
 </div>
+<?php
+include "../laily/common/footer.php";
+?>
 <script>
     $(function (){
        $(".read_check").click(function (){

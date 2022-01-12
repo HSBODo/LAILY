@@ -41,7 +41,7 @@
             echo(
                 "
                     <script>
-                    location.href = '../main/main.php';
+                    location.href = '../laily/index.php';
                     </script>
                 "
             );
